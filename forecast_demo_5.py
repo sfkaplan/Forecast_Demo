@@ -8,9 +8,9 @@ import altair as alt
 import datetime
 
 # Load data & models
-test_df = pd.read_csv("C:\\Curso Pronóstico\\2025\\test_power_consumption.csv", parse_dates=['dt'])
-X_test_rf = np.load("C:\\Curso Pronóstico\\2025\\test_power_consumption_rf.npy")
-X_test_lstm = np.load("C:\\Curso Pronóstico\\2025\\test_power_consumption_lstm.npy")
+test_df = pd.read_csv("test_power_consumption.csv", parse_dates=['dt'])
+X_test_rf = np.load("test_power_consumption_rf.npy")
+X_test_lstm = np.load("test_power_consumption_lstm.npy")
 
 arma_model = joblib.load("arma_model.pkl")
 rf_model = joblib.load("rf_model.pkl")
