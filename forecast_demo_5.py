@@ -8,16 +8,16 @@ import altair as alt
 import datetime
 
 # Load data & models
-test_df = pd.read_csv("test_power_consumption.csv", parse_dates=['dt'])
-X_test_rf = np.load("test_power_consumption_rf.npy")
-X_test_lstm = np.load("test_power_consumption_lstm.npy")
+test_df = pd.read_csv("test_power_consumption_2.csv", parse_dates=['dt'])
+X_test_rf = np.load("test_power_consumption_rf_2.npy")
+X_test_lstm = np.load("test_power_consumption_lstm_2.npy")
 
-arma_model = joblib.load("arma_model.pkl")
-rf_model = joblib.load("rf_model.pkl")
-lstm_model = load_model("lstm_model.keras", compile=False)
+arma_model = joblib.load("arma_model_2.pkl")
+rf_model = joblib.load("rf_model_2.pkl")
+lstm_model = load_model("lstm_model_2.keras", compile=False)
 
 # Load scaler
-scaler = joblib.load("scaler.pkl")
+scaler = joblib.load("scaler_2.pkl")
 
 # Forecasts (full length)
 arma_preds = arma_model.forecast(steps=len(test_df))
