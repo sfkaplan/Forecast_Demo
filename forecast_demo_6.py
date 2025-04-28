@@ -30,7 +30,7 @@ lstm_preds_inversed = scaler.inverse_transform(lstm_preds.reshape(-1, 1)).flatte
 st.title("Pronóstico de Ventas Minoristas")
 
 model_choice = st.selectbox("Elegir un Modelo", ["ARMA", "Random Forest", "LSTM"])
-forecast_type = st.radio("Forecast type", ["Pronóstico Puntual (por día)", "Pronóstico Acumulado"])
+#forecast_type = st.radio("Forecast type", ["Pronóstico Puntual (por día)", "Pronóstico Acumulado"])
 
 st.subheader("Seleccionar fecha inicial y final (con fecha completa)")
 
@@ -71,8 +71,8 @@ elif model_choice == "LSTM":
 actual = test_df['Global_active_power'].iloc[start_pos:end_pos].values
 
 # Apply cumulative forecast
-if forecast_type == "Pronóstico Acumulado":
-    preds = np.cumsum(preds) + test_df['Global_active_power'].iloc[start_pos]
+#if forecast_type == "Pronóstico Acumulado":
+ #   preds = np.cumsum(preds) + test_df['Global_active_power'].iloc[start_pos]
 
 # Prepare chart dataframe
 n = min(len(filtered_df), len(preds), len(actual))
