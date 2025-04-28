@@ -6,6 +6,7 @@ from keras.models import load_model
 from sklearn.preprocessing import MinMaxScaler
 import altair as alt
 import datetime
+import pmdarima
 
 # Load data & models
 test_df = pd.read_csv("test_power_consumption_2.csv", parse_dates=['dt'])
