@@ -84,7 +84,7 @@ chart = alt.Chart(chart_df).transform_fold(
     as_=['Series', 'Value']
 ).mark_line().encode(
     x='Datetime:T',
-    y=alt.Y('Value:Q', title='Power Consumption (kWh)'),
+    y=alt.Y('Value:Q', title='USD mn'),
     color='Series:N'
 ).properties(
     width=800,
