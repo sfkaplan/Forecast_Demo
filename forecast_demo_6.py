@@ -42,8 +42,12 @@ max_dt = test_df['dt'].max()
 start_date = st.date_input("Fecha Inicial", value=min_dt.date(), min_value=min_dt.date(), max_value=max_dt.date())
 end_date = st.date_input("Fecha Final", value=max_dt.date(), min_value=min_dt.date(), max_value=max_dt.date())
 
+# Convert start_date and end_date to datetime64[ns] to match the datetime type in the 'dt' column
+start_dt = datetime.datetime.combine(start_date, datetime.time(0, 0))
+end_dt = datetime.datetime.combine(end_date, datetime.time(23, 59))
+
 # Filter dataframe
-mask = (test_df['dt'] >= start_date) & (test_df['dt'] <= end_date)
+mask = (test_df['dt'] >= start_dt) & (test_df['dt'] <= end_dt)
 filtered_df = test_df[mask]
 
 # Prevent empty selections
