@@ -7,3 +7,4 @@ keras
 altair
 tensorflow
 statsmodels==0.14.1
+pmdarima
