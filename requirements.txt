@@ -6,4 +6,4 @@ scikit-learn
 keras
 altair
 tensorflow
-statsmodels
+statsmodels==0.14.1
